@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Layout Example</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        caption {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <caption>Student Academic Record</caption>
+
+    <tr>
+        <th rowspan="2" align="center">Roll No</th>
+        <th rowspan="2" align="left">Name</th>
+        <th colspan="3" align="center">Marks</th>
+    </tr>
+
+    <tr>
+        <th align="center">Maths</th>
+        <th align="center">Science</th>
+        <th align="center">Computer</th>
+    </tr>
+
+    <tr>
+        <td align="center">101</td>
+        <td align="left">Amit</td>
+        <td align="right">85</td>
+        <td align="right">78</td>
+        <td align="right">90</td>
+    </tr>
+
+    <tr>
+        <td align="center">102</td>
+        <td align="left">Neha</td>
+        <td align="right">88</td>
+        <td align="right">92</td>
+        <td align="right">95</td>
+    </tr>
+
+</table>
+
+</body>
+</html>
