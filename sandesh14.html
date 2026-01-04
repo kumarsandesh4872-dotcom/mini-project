@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Functions & Scope Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .box {
+            background: #ffffff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px gray;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JavaScript User-Defined Functions & Scope</h1>
+
+<div class="box" id="output"></div>
+
+<script>
+    let output = document.getElementById("output");
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function multiply(a, b) {
+        return a * b;
+    }
+
+    output.innerHTML += "<h2>User-Defined Functions</h2>";
+    output.innerHTML += "Addition (10 + 5): " + add(10, 5) + "<br>";
+    output.innerHTML += "Multiplication (4 × 6): " + multiply(4, 6) + "<br>";
+
+    output.innerHTML += "<h2>var Scope</h2>";
+
+    function varScopeDemo() {
+        if (true) {
+            var x = 10;   
+        }
+        output.innerHTML += "var x inside function: " + x + "<br>";
+    }
+    varScopeDemo();
+
+    output.innerHTML += "<h2>let Scope</h2>";
+
+    function letScopeDemo() {
+        if (true) {
+            let y = 20;   
+            output.innerHTML += "let y inside block: " + y + "<br>";
+        }
+        output.innerHTML += "let y outside block: Not Accessible<br>";
+    }
+    letScopeDemo();
+
+    output.innerHTML += "<h2>const Scope</h2>";
+
+    function constScopeDemo() {
+        const z = 30;
+        output.innerHTML += "const z value: " + z + "<br>";
+    }
+    constScopeDemo();
+
+</script>
+
+</body>
+</html>

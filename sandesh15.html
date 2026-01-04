@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .form-box {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px gray;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        span {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Form Validation using JavaScript Events</h2>
+
+<div class="form-box">
+    <form onsubmit="return validateForm()">
+
+        <label>Name:</label>
+        <input type="text" id="name" oninput="checkName()">
+        <span id="nameError"></span>
+
+        <label>Email:</label>
+        <input type="text" id="email" oninput="checkEmail()">
+        <span id="emailError"></span>
+
+        <label>Password:</label>
+        <input type="password" id="password" oninput="checkPassword()">
+        <span id="passError"></span>
+
+        <br><br>
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+
+<script>
+  
+    function validateForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        if (name === "" || email === "" || password === "") {
+            alert("All fields are mandatory!");
+            return false;
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+    }
+
+    
+    function checkName() {
+        let name = document.getElementById("name").value;
+        if (name.length < 3) {
+            document.getElementById("nameError").innerHTML =
+                "Name must be at least 3 characters";
+        } else {
+            document.getElementById("nameError").innerHTML = "";
+        }
+    }
+
+    function checkEmail() {
+        let email = document.getElementById("email").value;
+        if (!email.includes("@")) {
+            document.getElementById("emailError").innerHTML =
+                "Invalid email format";
+        } else {
+            document.getElementById("emailError").innerHTML = "";
+        }
+    }
+
+    function checkPassword() {
+        let password = document.getElementById("password").value;
+        if (password.length < 6) {
+            document.getElementById("passError").innerHTML =
+                "Password must be at least 6 characters";
+        } else {
+            document.getElementById("passError").innerHTML = "";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show/Hide & Toggle CSS Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .box {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px gray;
+        }
+        .highlight {
+            background-color: yellow;
+            color: red;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Show/Hide & Toggle CSS Classes Demo</h1>
+
+<div class="box">
+    <h2 id="text">This is a sample text</h2>
+    <button onclick="toggleVisibility()">Show/Hide Text</button>
+    <button onclick="toggleHighlight()">Toggle Highlight</button>
+</div>
+
+<div class="box">
+    <p id="para">Another paragraph to demonstrate toggle class</p>
+    <button onclick="toggleClassPara()">Toggle Paragraph Class</button>
+</div>
+
+<script>
+    function toggleVisibility() {
+        let text = document.getElementById("text");
+        if (text.style.display === "none") {
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+
+    function toggleHighlight() {
+        let text = document.getElementById("text");
+        text.classList.toggle("highlight");
+    }
+
+    function toggleClassPara() {
+        let para = document.getElementById("para");
+        para.classList.toggle("highlight");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+        .box {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px gray;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>DOM Manipulation using JavaScript</h1>
+
+<div class="box">
+    <h2 id="heading">Original Heading</h2>
+    <p class="para">This is the original paragraph.</p>
+    <button onclick="changeHeading()">Change Heading</button>
+    <button onclick="changeParagraph()">Change Paragraph</button>
+</div>
+
+<div class="box">
+    <h2>Dynamic Content</h2>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <button onclick="addListItem()">Add Item</button>
+</div>
+
+<script>
+   
+    function changeHeading() {
+        let heading = document.getElementById("heading");
+        heading.innerHTML = "Heading Changed using getElementById()";
+    }
+
+  
+    function changeParagraph() {
+        let para = document.querySelector(".para");
+        para.innerHTML = "Paragraph changed using querySelector()";
+    }
+
+  
+    function addListItem() {
+        let list = document.getElementById("list");
+        let newItem = "<li>New Item " + (list.children.length + 1) + "</li>";
+        list.innerHTML += newItem;  
+    }
+</script>
+
+</body>
+</html>

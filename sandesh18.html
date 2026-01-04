@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listeners Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        .box {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px gray;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #mouseBox {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 10px;
+        }
+        #keyboardOutput {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Event Listeners Demo</h1>
+
+<div class="box">
+    <h2>Mouse Events</h2>
+    <div id="mouseBox">Hover / Click Me</div>
+    <button id="removeMouseListener">Remove Mouse Click Listener</button>
+</div>
+
+<div class="box">
+    <h2>Keyboard Events</h2>
+    <input type="text" id="keyboardInput" placeholder="Type here...">
+    <div id="keyboardOutput">Key Pressed: </div>
+</div>
+
+<script>
+   
+    let mouseBox = document.getElementById("mouseBox");
+
+    function mouseClickHandler() {
+        alert("Mouse Clicked!");
+    }
+
+    function mouseOverHandler() {
+        mouseBox.style.backgroundColor = "lightgreen";
+        mouseBox.innerHTML = "Mouse Over!";
+    }
+
+    function mouseOutHandler() {
+        mouseBox.style.backgroundColor = "lightblue";
+        mouseBox.innerHTML = "Hover / Click Me";
+    }
+
+    mouseBox.addEventListener("click", mouseClickHandler);
+    mouseBox.addEventListener("mouseover", mouseOverHandler);
+    mouseBox.addEventListener("mouseout", mouseOutHandler);
+
+    document.getElementById("removeMouseListener").addEventListener("click", function() {
+        mouseBox.removeEventListener("click", mouseClickHandler);
+        alert("Mouse Click Listener Removed");
+    });
+
+    let keyboardInput = document.getElementById("keyboardInput");
+    let keyboardOutput = document.getElementById("keyboardOutput");
+
+    keyboardInput.addEventListener("keydown", function(event) {
+        keyboardOutput.innerHTML = "Key Pressed (keydown): " + event.key;
+    });
+
+    keyboardInput.addEventListener("keyup", function(event) {
+        keyboardOutput.innerHTML = "Key Released (keyup): " + event.key;
+    });
+</script>
+
+</body>
+</html>

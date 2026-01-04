@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Drawing Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid black;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Canvas Drawing: Shapes & Colors</h1>
+
+<canvas id="myCanvas" width="500" height="400"></canvas>
+
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "lightblue";
+    ctx.fillRect(50, 50, 150, 100); 
+    ctx.strokeStyle = "blue";      
+    ctx.strokeRect(50, 50, 150, 100);
+
+    ctx.beginPath();
+    ctx.arc(300, 100, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = "lightgreen";
+    ctx.fill();
+    ctx.strokeStyle = "green";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(50, 200);   
+    ctx.lineTo(400, 200);  
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(200, 250);
+    ctx.lineTo(300, 350);
+    ctx.lineTo(100, 350);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.strokeStyle = "darkorange";
+    ctx.stroke();
+
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "black";
+    ctx.fillText("Canvas Drawing Demo", 150, 30);
+</script>
+
+</body>
+</html>

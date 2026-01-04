@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create & Manipulate DOM Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+        .box {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px gray;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        ul {
+            margin-top: 10px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>DOM: Create, Append, Remove, Modify Elements</h1>
+
+<div class="box">
+    <h2>Dynamic List</h2>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeItem()">Remove Last Item</button>
+    <button onclick="modifyItem()">Modify First Item</button>
+</div>
+
+<script>
+    let myList = document.getElementById("myList");
+
+    function addItem() {
+        let newItem = document.createElement("li");   
+        newItem.textContent = "Item " + (myList.children.length + 1);
+        myList.appendChild(newItem);                 
+    }
+
+    function removeItem() {
+        if (myList.children.length > 0) {
+            myList.removeChild(myList.lastElementChild);
+        } else {
+            alert("No items to remove!");
+        }
+    }
+
+    function modifyItem() {
+        if (myList.children.length > 0) {
+            myList.children[0].textContent = "Modified Item 1";
+            myList.children[0].style.color = "red";
+            myList.children[0].style.fontWeight = "bold";
+        } else {
+            alert("No items to modify!");
+        }
+    }
+</script>
+
+</body>
+</html>
+

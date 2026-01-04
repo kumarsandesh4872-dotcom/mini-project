@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors Example</title>
+
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        #main-title {
+            color: darkblue;
+            text-align: center;
+        }
+
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+
+        div p {
+            color: brown;
+        }
+
+        h2, h3, p {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-title">CSS Selectors Demonstration</h1>
+
+    <h2>Class Selector Example</h2>
+    <p class="highlight">This paragraph uses a class selector.</p>
+
+    <h2>Descendant Selector Example</h2>
+    <div>
+        <p>This paragraph is inside a div and styled using a descendant selector.</p>
+    </div>
+
+    <h3>Group Selector Example</h3>
+    <p>This paragraph shares styles with h2 and h3 using group selector.</p>
+
+</body>
+</html>

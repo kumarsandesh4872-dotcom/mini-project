@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Conditional & Loop Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .box {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px gray;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Conditional Statements & Loops</h1>
+
+    <div class="box" id="output"></div>
+
+    <script>
+        let output = document.getElementById("output");
+
+        // ===============================
+        // CONDITIONAL STATEMENTS
+        // ===============================
+
+        let marks = 72;
+
+        output.innerHTML += "<h2>Conditional Statements</h2>";
+
+        // if statement
+        if (marks >= 40) {
+            output.innerHTML += "Result: Pass<br>";
+        }
+
+        // if-else statement
+        if (marks >= 60) {
+            output.innerHTML += "Division: First Division<br>";
+        } else {
+            output.innerHTML += "Division: Second Division<br>";
+        }
+
+        // else-if ladder
+        if (marks >= 80) {
+            output.innerHTML += "Grade: A<br>";
+        } else if (marks >= 60) {
+            output.innerHTML += "Grade: B<br>";
+        } else if (marks >= 40) {
+            output.innerHTML += "Grade: C<br>";
+        } else {
+            output.innerHTML += "Grade: Fail<br>";
+        }
+
+        // ===============================
+        // FOR LOOP
+        // ===============================
+
+        output.innerHTML += "<h2>For Loop</h2>";
+
+        for (let i = 1; i <= 5; i++) {
+            output.innerHTML += "For Loop Number: " + i + "<br>";
+        }
+
+        // ===============================
+        // WHILE LOOP
+        // ===============================
+
+        output.innerHTML += "<h2>While Loop</h2>";
+
+        let j = 1;
+        while (j <= 5) {
+            output.innerHTML += "While Loop Value: " + j + "<br>";
+            j++;
+        }
+
+        // ===============================
+        // DO WHILE LOOP
+        // ===============================
+
+        output.innerHTML += "<h2>Do While Loop</h2>";
+
+        let k = 1;
+        do {
+            output.innerHTML += "Do While Count: " + k + "<br>";
+            k++;
+        } while (k <= 5);
+
+    </script>
+
+</body>
+</html>
